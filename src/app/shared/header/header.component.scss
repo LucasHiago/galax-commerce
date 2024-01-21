@@ -1,0 +1,25 @@
+.menu-controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid;
+
+  .logo {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  .logo, .menu, .user-actions {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .menu-item {
+      display: flex;
+      flex: 1;
+      color: var(--primary-50);
+    }
+  }
+}

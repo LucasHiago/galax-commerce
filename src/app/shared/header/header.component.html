@@ -1,0 +1,13 @@
+<nav class="menu-controller">
+  <div class="logo">
+    Galax Commerce
+  </div>
+  <div class="menu">
+    @for (item of simpleMenu; track item) {
+      <a [routerLink]="item.link" class="menu-item"> {{ item.name }} </a>
+    }
+  </div>
+  <div class="user-actions">
+    <app-useractions></app-useractions>
+  </div>
+</nav>
