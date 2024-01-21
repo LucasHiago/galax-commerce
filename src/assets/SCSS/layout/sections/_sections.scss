@@ -1,0 +1,29 @@
+.section {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: min(75vw, 100vw);
+    display: flex;
+    gap: var(--space-sm);
+
+    .content {
+      &.flexed {
+        flex: 1;
+        display: flex;
+        padding: var(--space-md);
+    
+        &.centered {
+          justify-content: center;
+        }
+        &.left {
+          justify-content: flex-start;
+        }
+        &.right {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+}

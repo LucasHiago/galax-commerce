@@ -1,0 +1,48 @@
+.btn {
+  text-transform: uppercase;
+  border-radius: var(--default-border-radius);
+  padding: calc(var(--space-sm) - 4px) var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-sm) - 8px);
+  letter-spacing: 1.25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .45s ease-in-out;
+
+  &:hover {
+    filter: brightness(.5);
+  }
+
+  &-default {
+    background: var(--accent-500);
+    border: 1px solid transparent;
+    color: white;
+  }
+
+  &-red {
+    background: var(--error-500);
+  }
+
+  &-stretch {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &-outline {
+    background: transparent;
+    border: 0;
+
+    &-error {
+      color: var(--error-500);
+    }
+
+    &-primary {
+      color: var(--accent-500);
+    }
+
+    &-bordered {
+      border: 1px solid rgba(33, 33, 33, .16);
+    }
+  }
+}
