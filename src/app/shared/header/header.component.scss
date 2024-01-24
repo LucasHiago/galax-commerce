@@ -4,14 +4,16 @@
   justify-content: space-between;
   padding: var(--space-lg) var(--space-md);
   margin-bottom: var(--space-md);
-  border-bottom: 1px solid;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
 
-  .logo {
-    text-transform: uppercase;
-    font-weight: 800;
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    cursor: pointer;
   }
 
-  .logo, .menu, .user-actions {
+  .logo, .menu, .actions {
     flex: 1;
     display: flex;
     justify-content: center;
