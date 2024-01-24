@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../cart/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  constructor(private cartService: CartService){}
+
+  toggleCart() {
+    this.cartService.toggleCarVisibility();
+  }
+
   simpleMenu = [
     { name: 'Produtos', link: 'products' },
     { name: 'Serviços', link: 'services' },

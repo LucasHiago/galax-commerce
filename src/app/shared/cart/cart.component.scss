@@ -1,0 +1,30 @@
+.cart-controller {
+  height: 100vh;
+  width: 20vw;
+  transform: translateX(100vw);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  border-left: 1px solid rgba(0, 0, 0, .15);
+  transition: all .45s ease-in-out !important;
+  background: white;
+  padding: var(--space-md);
+
+  .cart-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .cart-content {
+    margin-top: var(--space-md);
+    height: calc(100% - 1.5em - var(--space-md));
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}

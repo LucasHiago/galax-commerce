@@ -11,6 +11,8 @@
   &:focus {
     outline: none;
   }
+
+  @import './webkit_scrollbar';
 }
 
 body {
@@ -29,5 +31,9 @@ a {
   &:hover {
     font-weight: bold;
   }
+}
+
+ng-icon {
+  cursor: pointer;
 }
 
