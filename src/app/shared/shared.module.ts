@@ -14,8 +14,10 @@ import { RequestsService } from '../services/requests.service';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { NotificationComponent } from './notification/notification.component';
 
-const components = [ HeaderComponent, UserActionsComponent, CardListComponent, CardComponent, CartComponent, DialogComponent, FormComponent ];
+const components = [ HeaderComponent, UserActionsComponent, CardListComponent, CardComponent, CartComponent, DialogComponent, FormComponent,
+NotificationComponent ];
 
 @NgModule({
   declarations: components,
