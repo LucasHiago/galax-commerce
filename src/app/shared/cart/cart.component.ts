@@ -21,7 +21,7 @@ export class CartComponent implements OnDestroy {
   @ViewChild(DialogComponent) dialogComponent!: DialogComponent;
 
   fields: Array<any> = [
-    { type: 'text', label: 'Nome', controlName: 'nome'},
+    { type: 'text', label: 'Nome', controlName: 'name'},
     { type: 'text', label: 'Email', controlName: 'email' }
   ];
 

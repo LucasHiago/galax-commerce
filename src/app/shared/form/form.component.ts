@@ -75,6 +75,8 @@ export class FormComponent {
       idMap.forEach(([oldKey, newKey]) => {
         if (item[oldKey] !== undefined) {
           acc[newKey] = item[oldKey];
+        } else {
+          acc[newKey] = 0;
         }
       });
       return acc;
