@@ -6,6 +6,7 @@ import { DialService } from '../dialog/sevice/dial.service';
 import { SessionService } from '../../services/session/session.service';
 import { CartService } from '../cart/services/cart.service';
 import { BudgetItem, ExtractedId } from './sevice/budget-item';
+import { NotifyService } from '../notification/service/notify.service';
 
 @Component({
   selector: 'app-form',
@@ -29,7 +30,9 @@ export class FormComponent {
     private _request: RequestsService, 
     private _dial: DialService,
     private _session: SessionService,
-    private _cart: CartService) {}
+    private _cart: CartService,
+    private _notify: NotifyService
+    ) {}
 
   ngOnInit(): void {
     this.getFields();
@@ -75,6 +78,8 @@ export class FormComponent {
       idMap.forEach(([oldKey, newKey]) => {
         if (item[oldKey] !== undefined) {
           acc[newKey] = item[oldKey];
+        } else {
+          acc[newKey] = 0;
         }
       });
       return acc;
@@ -84,15 +89,15 @@ export class FormComponent {
   sendData(): void {
     let CONTROL = this.dynamicForm.controls;
 
-    if(this.dynamicForm.valid){
+    if(this.dynamicForm.valid && CONTROL['name'].value.length > 0){
       let json = {
-        session: this.sessionId,
+        session_id: this.sessionId,
         name: CONTROL['name'].value,
         email: CONTROL['email'].value,
         productId: this.itemsCart.productId,
         serviceId: this.itemsCart.serviceId,
         comboItemId: this.itemsCart.comboItemId,
-        quantity: this.itemsCart,
+        quantity: this.itemsCartLength,
         budget_price: this.totalAmount
       }
 
@@ -101,6 +106,7 @@ export class FormComponent {
         error: _e => console.log(_e),
         complete: () => {
           this._dial.toggleDialogVisibility();
+          this._notify.setNewNotification(`Obrigado ${CONTROL['name'].value}, orçamento enviado com sucesso`, 'success');
         }
       });
     }
