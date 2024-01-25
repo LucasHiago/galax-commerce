@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-list',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './card-list.component.scss'
 })
 export class CardListComponent {
-  limit = Array.from({ length: 10}, (_, i) => i + 1);
+  @Input() Items: Array<any> = [];
+  @Input() Cart: boolean = false;
 }

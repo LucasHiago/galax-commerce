@@ -24,7 +24,6 @@
         bottom: 0;
         left: 0;
         background: white;
-        //border: 1px solid rgba(0, 0, 0, .15);
         padding: var(--space-sm);
         border-radius: calc(var(--default-border-radius) * 2);
         z-index: 1;
@@ -44,5 +43,10 @@
     width: 0;
     overflow: hidden;
     transition: height .45s ease-in-out !important;
+
+    .price {
+      font-weight: bold;
+      margin-top: var(--space-sm);
+    }
   }
 }
