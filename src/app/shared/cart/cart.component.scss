@@ -18,10 +18,28 @@
   }
 
   .cart-content {
-    margin-top: var(--space-md);
-    height: calc(100% - 1.5em - var(--space-md));
+    margin: var(--space-md) 0;
+    height: calc(100% - 1.5em - var(--space-md) * 2 - 130px - 20px);
+    padding: 0 var(--space-sm) 0 0;
     width: 100%;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cart-action {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    .price {
+      text-align: right;
+      font-size: var(--text-size-md);
+      font-weight: bold;
+      color: var(--primary-800);
+      opacity: .9;
+    }
   }
 
   &.active {

@@ -9,8 +9,13 @@ import { CartComponent } from './cart/cart.component';
 
 import { NgIconsModule, provideNgIconsConfig } from '@ng-icons/core';
 import { heroShoppingBagSolid, heroUserCircleSolid, heroXMarkSolid } from '@ng-icons/heroicons/solid';
+import { HttpClientModule } from '@angular/common/http';
+import { RequestsService } from '../services/requests.service';
+import { DialogComponent } from './dialog/dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './form/form.component';
 
-const components = [ HeaderComponent, UserActionsComponent, CardListComponent, CardComponent, CartComponent ];
+const components = [ HeaderComponent, UserActionsComponent, CardListComponent, CardComponent, CartComponent, DialogComponent, FormComponent ];
 
 @NgModule({
   declarations: components,
@@ -18,6 +23,9 @@ const components = [ HeaderComponent, UserActionsComponent, CardListComponent, C
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgIconsModule.withIcons({ heroShoppingBagSolid, heroUserCircleSolid, heroXMarkSolid })
   ],
   providers: [
@@ -25,6 +33,8 @@ const components = [ HeaderComponent, UserActionsComponent, CardListComponent, C
       size: '1.5em',
       color: 'inherit',
     }),
-  ],
+    RequestsService
+  ]
 })
+
 export class SharedModule { }
